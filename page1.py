@@ -1,10 +1,31 @@
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def page_1():
-    st.title('Page 1')
-    st.write('Ini adalah konten untuk Page 1')
-    with open("halo.md", "r") as file:
-        markdown_text = file.read()
+    st.title('Page 3')
+    st.write("Infinity Coding Club 2024")
+    # Membuat data dari dictionary
+    # data = {
+    #     'id': [1, 2, 3, 4, 5],
+    #     'nama': ['Ali', 'Budi', 'Charlie', 'Dani', 'Eko'],
+    #     'usia': [30, 25, 35, 40, 45],
+    #     'pekerjaan': ['Dokter', 'Insinyur', 'Guru', 'Petani', 'Pengusaha']
+    # }
+    data = pd.read_csv('data.csv')
 
-    # Tampilkan konten Markdown di aplikasi Streamlit
-    st.markdown(markdown_text)
+    df = pd.DataFrame(data)
+
+    # Menampilkan DataFrame
+    st.write(df)
+
+    # Membuat grafik batang dari kolom 'nama' dan 'usia'
+    fig, ax = plt.subplots()
+    ax.bar(df['nama'], df['usia'])
+    plt.title('Usia berdasarkan Nama')
+    plt.xlabel('Nama')
+    plt.ylabel('Usia')
+
+    # Menampilkan grafik
+    st.pyplot(fig)
+

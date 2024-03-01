@@ -1,5 +1,10 @@
 import streamlit as st
 
 def page_3():
-    st.title('Page 3')
-    st.write('Ini adalah konten untuk Page 3')
+    st.title('Page 1')
+    st.write('Ini adalah konten untuk Page 1')
+    with open("halo.md", "r") as file:
+        markdown_text = file.read()
+
+    # Tampilkan konten Markdown di aplikasi Streamlit
+    st.markdown(markdown_text)
