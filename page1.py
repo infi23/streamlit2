@@ -17,7 +17,8 @@ def page_1():
     df = pd.DataFrame(data)
 
     # Menampilkan DataFrame
-    st.write(df)
+    left_column, right_column = st.columns(2)
+    left_column.write(df)
 
     # Membuat grafik batang dari kolom 'nama' dan 'usia'
     fig, ax = plt.subplots()
@@ -27,5 +28,5 @@ def page_1():
     plt.ylabel('Usia')
 
     # Menampilkan grafik
-    st.pyplot(fig)
+    right_column.pyplot(fig)
 
