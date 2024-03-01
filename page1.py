@@ -28,5 +28,6 @@ def page_1():
     plt.ylabel('Usia')
 
     # Menampilkan grafik
+    st.write("Infinity Coding Club 2024")
     right_column.pyplot(fig)
 
